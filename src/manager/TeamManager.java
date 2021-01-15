@@ -68,6 +68,7 @@ public class TeamManager {
 
     //sap xep theo tien luong, theo ten
     public void sort(PlayerComparator playerComparator, int number) {
+        String result = "";
         for (int i = 1; i < team.size(); i++) {
             for (int j = 0; j < team.size() - i; j++) {
                 switch (number) {
@@ -77,6 +78,7 @@ public class TeamManager {
                             team.set(j, team.get(j + 1));
                             team.set(j + 1, temp);
                         }
+                        result += team.toString();
                         break;
                     case 2:
                         if (playerComparator.compare(team.get(j), team.get(j + 1)) < 0) {
@@ -84,10 +86,12 @@ public class TeamManager {
                             team.set(j, team.get(j + 1));
                             team.set(j + 1, temp);
                         }
+                        result += team.toString();
                         break;
                 }
             }
         }
+        System.out.println(result);
     }
 
     //xoa cau thu
