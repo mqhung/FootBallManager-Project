@@ -97,7 +97,7 @@ public class TeamManager {
     //xoa cau thu
     public void removePlayerByName(String name) {
         for (Player p : team) {
-            if (p.getName() == name) {
+            if (p.getName().equals(name)) {
                 team.remove(p);
                 break;
             }

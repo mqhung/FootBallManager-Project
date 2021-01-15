@@ -3,6 +3,7 @@ package view;
 import manager.TeamManager;
 import model.Football;
 import model.Player;
+
 import java.util.Scanner;
 
 import static view.SubMain.sortMenu;
@@ -11,14 +12,16 @@ public class Main {
     public static TeamManager teamManager = new TeamManager();
     public static Scanner sc = new Scanner(System.in);
     public static SubMain subMain = new SubMain();
+    public static Football football = Football.getFootball(50000);
+
     public static void main(String[] args) {
-         SubMain.setTeamManager(teamManager);
+        SubMain.setTeamManager(teamManager);
         System.out.println("Welcome back to my football team : LIVERPOOL");
         showMenu();
     }
 
     public static void showMenu() {
-        int choice = 0;
+        int choice = -1;
         do {
             System.out.println("1.Add new player.");
             System.out.println("2.Edit player on team.");
@@ -26,8 +29,13 @@ public class Main {
             System.out.println("4.Find player.");
             System.out.println("5.Sort player.");
             System.out.println("6.Show my team.");
-            System.out.println("7.Exit");
-            choice = Integer.parseInt(sc.nextLine());
+            System.out.println("7.Pay salary for team.");
+            System.out.println("8.Exit");
+            try {
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (Exception e) {
+                System.out.println("Not an option.");
+            }
             switch (choice) {
                 case 1:
                     System.out.println("Enter number of player you wanna add:");
@@ -41,12 +49,13 @@ public class Main {
                     System.out.println("Enter index of player you wanna edit:");
                     int index = Integer.parseInt(sc.nextLine());
                     Player editPlayer = subMain.editPlayer();
-                    teamManager.editPlayer(index,editPlayer);
+                    teamManager.editPlayer(index, editPlayer);
                     break;
                 case 3:
                     System.out.println("Enter player's name you wanna remove:");
                     String name = sc.nextLine();
                     teamManager.removePlayerByName(name);
+                    teamManager.showAllPlayer();
                     break;
                 case 4:
                     subMain.findPlayer();
@@ -58,6 +67,10 @@ public class Main {
                     teamManager.showAllPlayer();
                     break;
                 case 7:
+                    int money = teamManager.paySalary(football);
+                    System.out.println(money);
+                    break;
+                case 8:
                     System.out.println("Thank you for visiting my team. See you again!!");
                     System.exit(0);
                     break;

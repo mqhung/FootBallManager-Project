@@ -16,7 +16,6 @@ public class SubMain {
     public static void setTeamManager(TeamManager teamManager) {
         SubMain.teamManager = teamManager;
     }
-
     public static PlayerNameCompare playerNameCompare = new PlayerNameCompare();
     public static PlayerSalaryCompare playerSalaryCompare = new PlayerSalaryCompare();
 
@@ -41,12 +40,16 @@ public class SubMain {
     }
 
     public void findPlayer() {
-        int choice;
+        int choice = -1;
         do {
             System.out.println("1.Find by name?");
             System.out.println("2.Find by salary?");
             System.out.println("3.Back to menu?");
-            choice = Integer.parseInt(sc.nextLine());
+            try{
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (Exception e){
+                System.out.println("Not an option.");
+            }
             switch (choice) {
                 case 1:
                     System.out.println("Enter player's name you wanna find:");
@@ -70,12 +73,16 @@ public class SubMain {
     }
 
     public static void sortMenu() {
-        int choose;
+        int choose = -1;
         do {
             System.out.println("1.Sort by name?");
             System.out.println("2.Sort by salary?");
             System.out.println("3.Back menu?");
-            choose = Integer.parseInt(sc.nextLine());
+            try {
+                choose = Integer.parseInt(sc.nextLine());
+            } catch (Exception e){
+                System.out.println("Not an option.");
+            }
             switch (choose) {
                 case 1:
                     sortNamePlayer();
@@ -95,12 +102,16 @@ public class SubMain {
     }
 
     public static void sortNamePlayer() {
-        int option;
+        int option = -1;
         do {
             System.out.println("1.Sort Up");
             System.out.println("2.Sort Down");
             System.out.println("3. Back sort menu");
-            option = Integer.parseInt(sc.nextLine());
+            try{
+                option = Integer.parseInt(sc.nextLine());
+            } catch (Exception e){
+                System.out.println("Not an option");
+            }
             switch (option) {
                 case 1:
                     teamManager.sort(playerNameCompare, 1);
@@ -120,12 +131,16 @@ public class SubMain {
     }
 
     public static void sortSalaryPlayer() {
-        int choice;
+        int choice = -1;
         do {
             System.out.println("1.Sort Up");
             System.out.println("2.Sort Down");
             System.out.println("3. Back sort menu");
-            choice = Integer.parseInt(sc.nextLine());
+            try{
+                choice = Integer.parseInt(sc.nextLine());
+            } catch (Exception e){
+                System.out.println("Not an option");
+            }
             switch (choice) {
                 case 1:
                     teamManager.sort(playerSalaryCompare, 1);
