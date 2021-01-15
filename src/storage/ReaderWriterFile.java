@@ -28,7 +28,7 @@ public class ReaderWriterFile {
         }
     }
 
-    public  List<Player> readFile() {
+    public List<Player> readFile() {
         List<Player> list = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader(FILE);
@@ -49,7 +49,7 @@ public class ReaderWriterFile {
     public static Player splitString(String string) {
         String[] array = string.split(" ");
         int salary = Integer.parseInt(array[4]);
-        Player player = new Player(array[0], array[1], array[2], array[3],salary);
+        Player player = new Player(array[0], array[1], array[2], array[3], salary);
         return player;
     }
 

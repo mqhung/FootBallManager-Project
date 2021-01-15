@@ -1,4 +1,5 @@
 package manager;
+
 import storage.ReaderWriterFile;
 
 import model.Football;
@@ -24,9 +25,10 @@ public class TeamManager {
             System.out.println(p);
         }
     }
+
     //sua thong tin cau thu
-    public void editPlayer(int index, Player player){
-        team.set(index,player);
+    public void editPlayer(int index, Player player) {
+        team.set(index, player);
         file.writeFile(team);
     }
 

@@ -16,6 +16,7 @@ public class SubMain {
     public static void setTeamManager(TeamManager teamManager) {
         SubMain.teamManager = teamManager;
     }
+
     public static PlayerNameCompare playerNameCompare = new PlayerNameCompare();
     public static PlayerSalaryCompare playerSalaryCompare = new PlayerSalaryCompare();
 
@@ -35,19 +36,19 @@ public class SubMain {
     }
 
     public Player editPlayer() {
-        Player editPlayer = addNewPlayer();
-        return editPlayer;
+        Player edit = addNewPlayer();
+        return edit;
     }
 
     public void findPlayer() {
         int choice = -1;
         do {
-            System.out.println("1.Find by name?");
-            System.out.println("2.Find by salary?");
-            System.out.println("3.Back to menu?");
-            try{
+            System.out.println("1.Find by name");
+            System.out.println("2.Find by salary");
+            System.out.println("3.Back to menu");
+            try {
                 choice = Integer.parseInt(sc.nextLine());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Not an option.");
             }
             switch (choice) {
@@ -75,12 +76,12 @@ public class SubMain {
     public static void sortMenu() {
         int choose = -1;
         do {
-            System.out.println("1.Sort by name?");
-            System.out.println("2.Sort by salary?");
-            System.out.println("3.Back menu?");
+            System.out.println("1.Sort by name");
+            System.out.println("2.Sort by salary");
+            System.out.println("3.Back menu");
             try {
                 choose = Integer.parseInt(sc.nextLine());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Not an option.");
             }
             switch (choose) {
@@ -104,12 +105,12 @@ public class SubMain {
     public static void sortNamePlayer() {
         int option = -1;
         do {
-            System.out.println("1.Sort Up");
-            System.out.println("2.Sort Down");
-            System.out.println("3. Back sort menu");
-            try{
+            System.out.println("1.Sort up");
+            System.out.println("2.Sort down");
+            System.out.println("3. Back to sort menu");
+            try {
                 option = Integer.parseInt(sc.nextLine());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Not an option");
             }
             switch (option) {
@@ -136,9 +137,9 @@ public class SubMain {
             System.out.println("1.Sort Up");
             System.out.println("2.Sort Down");
             System.out.println("3. Back sort menu");
-            try{
+            try {
                 choice = Integer.parseInt(sc.nextLine());
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Not an option");
             }
             switch (choice) {
