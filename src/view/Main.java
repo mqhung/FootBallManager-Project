@@ -43,7 +43,7 @@ public class Main {
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Not an option.");
+                System.out.println("Oops incorrect option!! Please enter again.");
             }
             switch (choice) {
                 case 1:
@@ -55,7 +55,7 @@ public class Main {
                             teamManager.addNewPlayer(newPlayer);
                         }
                     }catch (Exception e){
-                        System.out.println("Oops incorrect!! Please enter again");
+                        System.out.println("Oops incorrect!! Please enter again.");
                     }
                     break;
                 case 2:
@@ -65,7 +65,7 @@ public class Main {
                         Player editPlayer = subMain.editPlayer();
                         teamManager.editPlayer(index, editPlayer);
                     } catch (Exception e){
-                        System.out.println("Oops incorrect!! Please enter again");
+                        System.out.println("Oops incorrect!! Please enter again.");
                     }
                     break;
                 case 3:
@@ -75,7 +75,7 @@ public class Main {
                         teamManager.removePlayerByName(name);
                         teamManager.showAllPlayer();
                     } catch (Exception e){
-                        System.out.println("Oops incorrect!! Please enter again");
+                        System.out.println("Oops incorrect!! Please enter again.");
                     }
                     break;
                 case 4:
@@ -89,7 +89,7 @@ public class Main {
                     break;
                 case 7:
                     int money = teamManager.paySalary(football);
-                    System.out.println(money);
+                    System.out.println("Money of Fund is: " + money);
                     break;
                 case 8:
                     System.out.println("Thank you for visiting my team. See you again!!");

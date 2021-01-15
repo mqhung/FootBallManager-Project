@@ -52,6 +52,8 @@ public class TeamManager {
         for (Player p : team) {
             if (p.getName().equals(name)) {
                 result += p.toString();
+            } else {
+                System.out.println("Find error!!.Try again later.");
             }
         }
         System.out.println(result);
@@ -63,6 +65,8 @@ public class TeamManager {
         for (Player p : team) {
             if (p.getSalary() == salary) {
                 result += p.toString();
+            } else {
+                System.out.println("Find error!!.Try again later.");
             }
         }
         System.out.println(result);

@@ -49,7 +49,7 @@ public class SubMain {
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Not an option.");
+                System.out.println("Oops incorrect option!! Please enter again.");
             }
             switch (choice) {
                 case 1:
@@ -59,8 +59,12 @@ public class SubMain {
                     break;
                 case 2:
                     System.out.println("Enter player's salary you wanna find:");
-                    int salary = Integer.parseInt(sc.nextLine());
-                    teamManager.searchingBySalary(salary);
+                    try{
+                        int salary = Integer.parseInt(sc.nextLine());
+                        teamManager.searchingBySalary(salary);
+                    }catch (Exception e){
+                        System.out.println("Oops incorrect!! Please enter again.");
+                    }
                     break;
                 case 3:
                     showMenu();
@@ -82,7 +86,7 @@ public class SubMain {
             try {
                 choose = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Not an option.");
+                System.out.println("Oops incorrect option!! Please enter again.");
             }
             switch (choose) {
                 case 1:
@@ -111,7 +115,7 @@ public class SubMain {
             try {
                 option = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Not an option");
+                System.out.println("Oops incorrect option!! Please enter again.");
             }
             switch (option) {
                 case 1:
@@ -140,7 +144,7 @@ public class SubMain {
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
-                System.out.println("Not an option");
+                System.out.println("Oops incorrect option!! Please enter again.");
             }
             switch (choice) {
                 case 1:

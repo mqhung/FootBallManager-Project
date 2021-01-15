@@ -1,2 +1,2 @@
-Ronaldo 1985 Portugal CenterForward 10000
-Beckham 1975 England Center Attacking Midfielder 15000
+Ronaldo 1985 Portugal CF 8000
+Mane 1992 Senegal LWF 11000
