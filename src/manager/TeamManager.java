@@ -52,10 +52,11 @@ public class TeamManager {
         for (Player p : team) {
             if (p.getName().equals(name)) {
                 result += p.toString();
-                break;
-            } else {
-                System.out.println("Find error!!.Try again later.");
             }
+        }
+        if(result.equals("")){
+            System.out.println("Find error!!.Try again later.");
+            return;
         }
         System.out.println(result);
     }
@@ -66,10 +67,11 @@ public class TeamManager {
         for (Player p : team) {
             if (p.getSalary() == salary) {
                 result += p.toString();
-                break;
-            } else {
-                System.out.println("Find error!!.Try again later.");
             }
+        }
+        if(result.equals("")){
+            System.out.println("Find error!!.Try again later.");
+            return;
         }
         System.out.println(result);
     }

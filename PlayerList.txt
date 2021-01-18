@@ -1,2 +1,2 @@
-1 1 1 1 1
-2 2 2 2 2
+Torres 1984 Spain Center Forward 15000
+Ronaldo 1985 Portugal Center Forward 20000

@@ -57,6 +57,7 @@ public class Main {
                         for (int i = 0; i < numberOfPlayer; i++) {
                             Player newPlayer = subMain.addNewPlayer();
                             teamManager.addNewPlayer(newPlayer);
+                            System.out.println("------Add Successful------");
                         }
                     }catch (Exception e){
                         System.out.println("Oops incorrect!! Please enter again.");
