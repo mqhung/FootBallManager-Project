@@ -3,9 +3,11 @@ package view;
 import manager.TeamManager;
 import model.Football;
 import model.Player;
+import storage.ReaderWriterFile;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 import static view.SubMain.sortMenu;
@@ -15,6 +17,7 @@ public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static SubMain subMain = new SubMain();
     public static Football football = Football.getFootball(50000);
+    public static ReaderWriterFile file = new ReaderWriterFile();
 
     public static void main(String[] args) {
         SubMain.setTeamManager(teamManager);
@@ -39,7 +42,8 @@ public class Main {
             System.out.println("5.Sort player.");
             System.out.println("6.Show my team.");
             System.out.println("7.Pay salary for team.");
-            System.out.println("8.Exit");
+            System.out.println("8.Read file.");
+            System.out.println("9.Exit");
             try {
                 choice = Integer.parseInt(sc.nextLine());
             } catch (Exception e) {
@@ -92,6 +96,10 @@ public class Main {
                     System.out.println("Money of Fund is: " + money);
                     break;
                 case 8:
+                    List<Player> list = file.readFile();
+                    System.out.println(list);
+                    break;
+                case 9:
                     System.out.println("Thank you for visiting my team. See you again!!");
                     System.exit(0);
                     break;

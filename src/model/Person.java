@@ -37,10 +37,8 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
+        return "name='" + name + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+                ", country='" + country + '\'' + ",";
     }
 }
